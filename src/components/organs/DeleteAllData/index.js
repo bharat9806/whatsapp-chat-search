@@ -39,7 +39,7 @@ export default function DeleteAllData({ onDeleteSuccess }) {
   };
 
   return (
-    <div className="delete-all-container" style={{ textAlign: "center", marginTop: "2rem" }}>
+    <div className="delete-data-container" style={{ textAlign: "center", marginTop: "2rem" }}>
       {loading && <Loader />}
       <button
         onClick={() => setShowModal(true)}

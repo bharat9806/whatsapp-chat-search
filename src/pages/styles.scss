@@ -1,0 +1,79 @@
+.hero-section {
+    background: linear-gradient(135deg, #0070f3, #00bcd4);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: auto;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: white;
+    color: #0070f3;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.hero-button:hover {
+    background: #e0e0e0;
+}
+
+.how-it-works {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.step {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.features-section {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.feature {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.no-data {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: gray;
+}

@@ -1,8 +1,11 @@
-import "./globals.css"; // Ensure global styles are included
+import "./globals.css";
 
 export const metadata = {
   title: "Chat Search App",
   description: "Easily search your chat history from WhatsApp, Instagram, and more.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
