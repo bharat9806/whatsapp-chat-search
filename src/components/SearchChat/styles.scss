@@ -1,0 +1,92 @@
+.search-chat-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .search-chat-header {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
+
+    .search-chat-controls {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .search-chat-input {
+        flex: 1;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        outline: none;
+
+        &:focus {
+            border-color: #0070f3;
+            box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+        }
+    }
+
+    .search-chat-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+
+        .search-chat-button {
+            flex: 1;
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            background-color: #0070f3;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 0.5rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.reset {
+                background-color: #e53e3e;
+            }
+
+            &:hover {
+                background-color: darken(#0070f3, 10%);
+            }
+        }
+    }
+
+    .search-chat-results {
+        .search-chat-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .search-chat-list-item {
+                padding: 0.75rem;
+                border-bottom: 1px solid #eee;
+                font-size: 1rem;
+                color: #444;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    .no-results {
+        text-align: center;
+        color: #777;
+    }
+}

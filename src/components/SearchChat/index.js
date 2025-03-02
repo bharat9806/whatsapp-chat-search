@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Fuse from "fuse.js";
+import "./styles.scss";
 
-// Helper function to extract sender name
 const getSender = (msg) => {
   if (msg.sender) {
     return msg.sender.split(":")[0].trim();
@@ -13,7 +13,6 @@ const getSender = (msg) => {
   return "";
 };
 
-// Helper function to extract message content by removing duplicate sender prefixes
 const getMessageContent = (msg) => {
   if (!msg.text) return "";
   const separator = " - ";
@@ -34,38 +33,10 @@ const getMessageContent = (msg) => {
 
 export default function SearchChat({ chatData = [] }) {
   const [query, setQuery] = useState("");
-  const [selectedSender, setSelectedSender] = useState("");
   const [filteredMessages, setFilteredMessages] = useState([]);
-  const [senders, setSenders] = useState([]);
 
-  // Extract unique sender names using fallback extraction and limit to first 2
-  useEffect(() => {
-    const uniqueSenders = [
-      ...new Set(
-        chatData.map((msg) => {
-          if (msg.sender) {
-            return msg.sender.split(":")[0].trim();
-          } else if (msg.text) {
-            const regex = /-\s*(.*?):/;
-            const match = msg.text.match(regex);
-            return match ? match[1].trim() : null;
-          }
-          return null;
-        }).filter((name) => name && name !== "null")
-      )
-    ].slice(0, 2);
-    setSenders(uniqueSenders);
-    console.log("Unique senders:", uniqueSenders);
-  }, [chatData]);
-
-  // Handle search when the Search button is clicked
   const handleSearch = () => {
     let filtered = chatData;
-    // Filter by Sender using helper function
-    if (selectedSender) {
-      filtered = filtered.filter((msg) => getSender(msg) === selectedSender);
-    }
-    // Apply fuzzy search if query exists
     if (query.trim()) {
       const processedData = filtered.map((msg) => ({
         ...msg,
@@ -77,49 +48,47 @@ export default function SearchChat({ chatData = [] }) {
     setFilteredMessages(filtered);
   };
 
-  // Reset all filters and clear displayed results
   const handleReset = () => {
     setQuery("");
-    setSelectedSender("");
     setFilteredMessages([]);
   };
 
   return (
-    <div>
-      {/* Sender Filter Dropdown */}
-      <select onChange={(e) => setSelectedSender(e.target.value)} value={selectedSender}>
-        <option value="">All Senders</option>
-        {senders.map((sender, index) => (
-          <option key={index} value={sender}>
-            {sender}
-          </option>
-        ))}
-      </select>
+    <div className="search-chat-container">
+      <h2 className="search-chat-header">Search Chat Messages</h2>
 
-      {/* Search Bar */}
-      <input
-        type="text"
-        placeholder="Search chats..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
+      <div className="search-chat-controls">
+        <input
+          type="text"
+          className="search-chat-input"
+          placeholder="Enter search keywords..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </div>
 
-      {/* Search and Reset Buttons */}
-      <button onClick={handleSearch}>Search</button>
-      <button onClick={handleReset}>Reset</button>
+      <div className="search-chat-buttons">
+        <button className="search-chat-button" onClick={handleSearch}>
+          Search
+        </button>
+        <button className="search-chat-button reset" onClick={handleReset}>
+          Reset
+        </button>
+      </div>
 
-      {/* Display Filtered Messages */}
-      <ul>
+      <div className="search-chat-results">
         {filteredMessages.length > 0 ? (
-          filteredMessages.map((msg) => (
-            <li key={msg.id}>
-               {getMessageContent(msg)}
-            </li>
-          ))
+          <ul className="search-chat-list">
+            {filteredMessages.map((msg) => (
+              <li key={msg.id} className="search-chat-list-item">
+                {getMessageContent(msg)}
+              </li>
+            ))}
+          </ul>
         ) : (
-          <li>No matching messages found.</li>
+          <p className="no-results">No matching messages found.</p>
         )}
-      </ul>
+      </div>
     </div>
   );
 }

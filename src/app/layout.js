@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <header className="bg-blue-600 text-white py-4 text-center">
+        <header className="bg-blue-600 text-black py-4 text-center">
           <h1 className="text-2xl font-bold">Chat Search App</h1>
         </header>
 

@@ -1,13 +1,14 @@
 import React from "react";
+import "./styles.scss"
 
 const MainLayout = ({ children }) => {
   return (
-    <div>
-      <header style={{ padding: "10px", color: "#fff" }}>
+    <div className="container">
+      <header className="header">
         <h1>Chat Search App</h1>
       </header>
-      <main style={{ padding: "20px" }}>{children}</main>
-      <footer style={{ padding: "10px", textAlign: "center" }}>
+      <main className="main">{children}</main>
+      <footer className="footer">
         <p>© 2025 Chat Search App</p>
       </footer>
     </div>

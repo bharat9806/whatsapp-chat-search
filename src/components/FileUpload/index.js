@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./styles.scss";
 
 export default function FileUpload({ onUploadSuccess }) {
   const [file, setFile] = useState(null);
@@ -47,12 +48,21 @@ export default function FileUpload({ onUploadSuccess }) {
   };
 
   return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload} disabled={uploading}>
+    <div className="file-upload-container">
+      <h2 className="file-upload-title">Upload Your Chat ZIP File</h2>
+      <input 
+        type="file" 
+        onChange={handleFileChange} 
+        className="file-upload-input"
+      />
+      <button 
+        onClick={handleUpload} 
+        disabled={uploading}
+        className="file-upload-button"
+      >
         {uploading ? "Uploading..." : "Upload File"}
       </button>
-      <p>{message}</p>
+      {message && <p className="file-upload-message">{message}</p>}
     </div>
   );
 }
