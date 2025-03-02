@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MainLayout from "../layout/main";
-import FileUpload from "../components/FileUpload";
-import SearchChat from "../components/SearchChat";
-import DeleteData from "../components/DeleteAllData";
+import FileUpload from "../components/organs/FileUpload";
+import SearchChat from "../components/organs/SearchChat";
+import DeleteData from "../components/organs/DeleteAllData";
 
 const HomePage = () => {
   const [chatData, setChatData] = useState([]);
