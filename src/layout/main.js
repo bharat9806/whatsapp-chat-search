@@ -7,7 +7,7 @@ import "./styles.scss"
 const MainLayout = ({ children }) => {
   return (
     <div className="container">
-       <ScrollProgressBar />
+      <ScrollProgressBar />
       <header className="header">
         <h1>Chat Search App</h1>
         <nav>
@@ -17,7 +17,11 @@ const MainLayout = ({ children }) => {
         </nav>
       </header>
       <SmoothScrollProvider>
-        <main className="main">{children}</main>
+        <main className="main">
+          <div className="width-wrapper">
+            {children}
+          </div>
+        </main>
       </SmoothScrollProvider>
       <footer className="footer">
         <p>© 2025 Chat Search App</p>
