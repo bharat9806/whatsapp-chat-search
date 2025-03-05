@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
     "adm-zip": "^0.5.16",
     "framer-motion": "^12.4.7",
     "fuse.js": "^7.1.0",

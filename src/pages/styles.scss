@@ -3,68 +3,90 @@
     color: white;
     text-align: center;
     padding: 100px 20px;
-}
 
-.hero-content {
-    max-width: 600px;
-    margin: auto;
-}
+    .hero-content {
+        max-width: 600px;
+        margin: auto;
 
-.hero-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: white;
-    color: #0070f3;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
+        .hero-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: white;
+            color: #0070f3;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
 
-.hero-button:hover {
-    background: #e0e0e0;
+            &:hover {
+                background: #e0e0e0;
+            }
+        }
+    }
 }
 
 .how-it-works {
     text-align: center;
     padding: 50px 20px;
-}
+    width: 100%;
 
-.steps-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
+    @media (width <=660px) {
+        padding: 30px 0;
+    }
 
-.step {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .steps-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+
+        @media (width <=660px) {
+            flex-direction: column;
+        }
+
+        .step {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            width: 20%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+            @media (width <=660px) {
+                width: 90%;
+            }
+        }
+    }
 }
 
 .features-section {
     background: #f4f4f4;
     text-align: center;
     padding: 50px 20px;
-}
 
-.feature-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
+    .feature-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
 
-.feature {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        @media (width <=660px) {
+            flex-direction: column;
+        }
+
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 25%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            @media (width <=660px) {
+                width: 90%;
+            }
+        }
+    }
 }
 
 .upload-section {
